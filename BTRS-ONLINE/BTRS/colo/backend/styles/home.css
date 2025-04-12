@@ -1,0 +1,241 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navigation Bar - Fixed at the top */
+.links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    display: flex;
+    justify-content: space-between; /* Logo on the left, links on the right */
+    align-items: center;
+    background-color: #1a1a2e;
+    padding: 10px 20px;
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+/* Add padding to the body to prevent content from being hidden under the navbar */
+body {
+    padding-top: 60px; /* Adjust based on navbar height */
+}
+
+/* Logo Styling */
+.logo {
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Links */
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ffcc00;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .logo {
+        margin-bottom: 10px;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav a {
+        margin: 10px 0;
+    }
+}
+
+/* Welcome Section */
+.welcome {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #16213e;
+    color: white;
+}
+
+.welcome h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Image Gallery */
+.image-gallery {
+    text-align: center;
+    padding: 20px;
+}
+
+.image-gallery h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.images img {
+    width: 220px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.images img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Image Gallery */
+@media (max-width: 768px) {
+    .images img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* About Us */
+.about-us {
+    background-color: #e3e3e3;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-us h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-us p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Advertisement Section */
+.advertisement {
+    text-align: center;
+    padding: 30px;
+    background-color: #1a1a2e;
+    color: white;
+}
+
+.advertisement h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.advertisement p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto 15px;
+}
+
+/* Call to Action Button */
+.cta {
+    display: inline-block;
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
+}
+
+.cta:hover {
+    background-color: #e65c00;
+}
+
+/* Fixed "Get Your Ticket" Button */
+.fixed-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff6600;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.fixed-link a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.fixed-link a:hover {
+    color: #1a1a2e;
+}
+
+/* Responsive Fixed Button */
+@media (max-width: 768px) {
+    .fixed-link {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 12px;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #1a1a2e;
+    color: white;
+    font-size: 14px;
+}
+
+/* Logout Button */
+.logout {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.logout:hover {
+    color: #ff0000;
+}

@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+/* Navigation Bar */
+.links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures logo stays on the left, links move to the right */
+    background-color: #1a1a2e;
+    padding: 0px 20px;
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Prevent content from being hidden under navbar */
+body {
+    padding-top: 60px;
+}
+
+/* Logo */
+.logo {
+    height: 50px;
+    width: 50px;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+/* Navigation Links Container */
+.nav-links {
+    display: flex;
+    gap: 20px; /* Controls spacing between links */
+}
+
+/* Navigation Links */
+.links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.links a:hover {
+    color: #ffcc00;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .links {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .links a {
+        padding: 8px 0;
+        margin: 5px 0;
+    }
+}
+
+/* Page Title */
+h1 {
+    margin-top: 20px;
+    font-size: 28px;
+    color: #1a1a2e;
+}
+
+/* Form Container */
+form {
+    background: white;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Dropdowns */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Submit Button */
+button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #e65c00;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    form {
+        width: 95%;
+    }
+}
+
+.logout:hover {
+    color: #ff0000;
+}

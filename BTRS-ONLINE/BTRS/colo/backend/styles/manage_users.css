@@ -1,0 +1,111 @@
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+/* Navigation Bar */
+.dashboard-links {
+    display: flex;
+    justify-content: center;
+    background-color: #1a1a2e;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.dashboard-links a:hover {
+    background-color: #ffcc00;
+    color: black;
+    border-radius: 5px;
+}
+
+/* Page Heading */
+h1 {
+    margin-top: 20px;
+    color: #1a1a2e;
+}
+
+/* Table Styling */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #1a1a2e;
+    color: white;
+    text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover Effect on Rows */
+table tr:hover {
+    background-color: #ffeb99;
+    transition: 0.3s ease-in-out;
+}
+
+/* Action Links */
+table td a {
+    color: #1a1a2e;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+table td a:hover {
+    color: #ffcc00;
+}
+
+/* Delete Link (Styled for Visibility) */
+table td a:last-child {
+    color: red;
+}
+
+table td a:last-child:hover {
+    color: darkred;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table th, table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
