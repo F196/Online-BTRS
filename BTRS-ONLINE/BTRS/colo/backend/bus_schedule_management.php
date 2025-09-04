@@ -20,14 +20,14 @@
     </div>
     <h1>Manage Bus Schedules</h1>
 
-    <!-- Form for Adding New Schedules -->
+    
     <form method="POST" action="add_schedule.php">
-        <!-- Departure Location -->
+
         <label for="departure">Departure Location:</label>
         <select id="departure" name="departure" required>
             <option value="">Select a Location</option>
             <?php
-            // Fetch all locations from the Locations table
+            
             $result = $conn->query("SELECT LocationName FROM Locations ORDER BY LocationName");
             while ($row = $result->fetch_assoc()) {
                 echo "<option value='{$row['LocationName']}'>{$row['LocationName']}</option>";
@@ -35,12 +35,12 @@
             ?>
         </select>
 
-        <!-- Arrival Location -->
+        
         <label for="arrival">Arrival Location:</label>
         <select id="arrival" name="arrival" required>
             <option value="">Select a Location</option>
             <?php
-            // Fetch all locations again for the arrival combo box
+            
             $result = $conn->query("SELECT LocationName FROM Locations ORDER BY LocationName");
             while ($row = $result->fetch_assoc()) {
                 echo "<option value='{$row['LocationName']}'>{$row['LocationName']}</option>";
@@ -48,19 +48,17 @@
             ?>
         </select>
 
-        <!-- Departure Date and Time -->
         <label for="departure_date">Departure Date:</label>
         <input type="date" id="departure_date" name="departure_date" required>
         <label for="departure_time">Departure Time:</label>
         <input type="time" id="departure_time" name="departure_time" required>
 
-        <!-- Arrival Date and Time -->
         <label for="arrival_date">Arrival Date:</label>
         <input type="date" id="arrival_date" name="arrival_date" required>
         <label for="arrival_time">Arrival Time:</label>
         <input type="time" id="arrival_time" name="arrival_time" required>
 
-        <!-- Bus Selection -->
+      
         <label for="bus_id">Select Bus:</label>
         <select id="bus_id" name="bus_id" required>
             <?php
@@ -115,3 +113,4 @@
     </table>
 </body>
 </html>
+
