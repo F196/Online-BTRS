@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../styles/admin_dashboard.css">
     <title>Admin Dashboard</title>
     <script>
-        // Function to toggle the edit form's visibility
         function toggleEditForm() {
             const editForm = document.getElementById('edit-form-container');
             editForm.style.display = (editForm.style.display === 'none' || editForm.style.display === '') ? 'block' : 'none';
@@ -27,13 +26,13 @@
     </div>
     <h1>Welcome, Admin!</h1>
 
-    <!-- Edit Details Button -->
+    
     <button onclick="toggleEditForm()">Edit My Details</button>
 
-    <!-- Edit Form (Hidden by Default) -->
+
     <div id="edit-form-container" style="display: none; margin-top: 20px;">
         <?php
-        // Fetch admin details (assumes admin is identified by RoleID = 1)
+    
         $stmt = $conn->prepare("SELECT FullName, Email FROM Users WHERE RoleID = 1 LIMIT 1");
         $stmt->execute();
         $result = $stmt->get_result();
@@ -58,7 +57,7 @@
         </form>
     </div>
 
-    <!-- Update Admin Details in the Backend -->
+   
     <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $fullname = $_POST['fullname'];
@@ -66,7 +65,7 @@
         $old_password = $_POST['old_password'];
         $new_password = $_POST['new_password'];
 
-        // Fetch the current password hash for the admin
+  
         $stmt = $conn->prepare("SELECT PasswordHash FROM Users WHERE RoleID = 1 LIMIT 1");
         $stmt->execute();
         $result = $stmt->get_result();
@@ -77,14 +76,14 @@
             echo "<p style='color: red;'>Error: Current password is incorrect!</p>";
         } else {
             if (!empty($new_password)) {
-                // Hash the new password before storing it in the database
+                
                 $passwordHash = password_hash($new_password, PASSWORD_DEFAULT);
 
-                // Update details with the new password
+
                 $stmt = $conn->prepare("UPDATE Users SET FullName = ?, Email = ?, PasswordHash = ? WHERE RoleID = 1");
                 $stmt->bind_param("sss", $fullname, $email, $passwordHash);
             } else {
-                // Update details without changing the password
+              
                 $stmt = $conn->prepare("UPDATE Users SET FullName = ?, Email = ? WHERE RoleID = 1");
                 $stmt->bind_param("ss", $fullname, $email);
             }
@@ -103,3 +102,4 @@
     <a href="logout.php" class="logout">Logout</a>
 </body>
 </html>
+
