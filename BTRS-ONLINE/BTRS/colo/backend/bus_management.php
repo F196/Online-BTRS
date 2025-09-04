@@ -21,13 +21,13 @@
     <h1>Manage Buses</h1>
 
     <?php
-    // Handle form submission
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $bus_number = $_POST['bus_number'];
         $capacity = intval($_POST['capacity']);
         $maintenance_status = $_POST['maintenance_status'];
 
-        // Check if the bus number already exists
+    
         $stmt = $conn->prepare("SELECT BusNumber FROM Buses WHERE BusNumber = ?");
         $stmt->bind_param("s", $bus_number);
         $stmt->execute();
@@ -36,9 +36,8 @@
         if ($result->num_rows > 0) {
             echo "<p style='color: red;'>Error: Bus number already exists!</p>";
         } else {
-            // Insert the new bus into the database
-            $stmt->close(); // Close the SELECT statement before preparing a new one
-
+          
+            $stmt->close();
             $stmt = $conn->prepare("INSERT INTO Buses (BusNumber, Capacity, MaintenanceStatus) VALUES (?, ?, ?)");
             $stmt->bind_param("sis", $bus_number, $capacity, $maintenance_status);
 
@@ -49,20 +48,20 @@
             }
         }
 
-        $stmt->close(); // Close the final statement to avoid conflicts
+        $stmt->close(); 
     }
     ?>
 
     <form method="POST">
-        <!-- Bus Number Text Input -->
+      
         <label for="bus_number">Bus Number:</label>
         <input type="text" id="bus_number" name="bus_number" placeholder="Bus Number" required><br><br>
 
-        <!-- Capacity Input -->
+        
         <label for="capacity">Capacity:</label>
         <input type="number" id="capacity" name="capacity" placeholder="Capacity" required><br><br>
 
-        <!-- Maintenance Status Combo Box -->
+        
         <label for="maintenance_status">Maintenance Status:</label>
         <select id="maintenance_status" name="maintenance_status" required>
             <option value="">Select a Maintenance Status</option>
@@ -86,11 +85,10 @@
         </thead>
         <tbody>
             <?php
-            // Fetch all buses from the database
             $result = $conn->query("SELECT BusNumber, Capacity, MaintenanceStatus FROM Buses");
 
             if ($result->num_rows > 0) {
-                // Loop through the results and display each bus
+                
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>
                             <td>{$row['BusNumber']}</td>
@@ -107,3 +105,4 @@
 
 </body>
 </html>
+
